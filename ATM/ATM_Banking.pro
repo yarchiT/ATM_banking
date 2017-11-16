@@ -32,9 +32,13 @@ SOURCES += \
 HEADERS += \
         initwindow.h \
     userform.h \
-    menuform.h
+    menuform.h \
+    ../staticBankLib/staticbanklib.h
 
 FORMS += \
         initwindow.ui \
     userform.ui \
     menuform.ui
+
+INCLUDEPATH += "../staticBankLib"
+LIBS += "../build-staticBankLib-Desktop-Debug/libstaticBankLib.a"
