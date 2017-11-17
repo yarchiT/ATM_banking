@@ -17,4 +17,6 @@ void InitWindow::on_submit_clicked()
 {
     userForm = new UserForm();
     userForm->show();
+    this->close();
+
 }

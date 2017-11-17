@@ -17,4 +17,5 @@ void UserForm::on_card1_clicked()
 {
     menuForm = new MenuForm();
     menuForm->show();
+    this->close();
 }

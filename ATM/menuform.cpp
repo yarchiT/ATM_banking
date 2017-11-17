@@ -15,25 +15,25 @@ MenuForm::~MenuForm()
 
 void MenuForm::on_deposit_clicked()
 {
-
+this->close();
 }
 
 void MenuForm::on_withdrawal_clicked()
 {
-
+this->close();
 }
 
 void MenuForm::on_transferToCard_clicked()
 {
-
+this->close();
 }
 
 void MenuForm::on_showBalance_clicked()
 {
-
+this->close();
 }
 
 void MenuForm::on_exit_clicked()
 {
-
+this->close();
 }
