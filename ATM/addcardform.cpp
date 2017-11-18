@@ -12,3 +12,14 @@ AddCardForm::~AddCardForm()
 {
     delete ui;
 }
+
+void AddCardForm::on_goBack_clicked()
+{
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(1); //go to the user form
+}
+
+
+void AddCardForm::on_AddCard_clicked()
+{
+
+}

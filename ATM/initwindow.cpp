@@ -17,20 +17,20 @@ InitWindow::~InitWindow()
 void InitWindow::on_submit_clicked()
 {
     number = ui->numberLine->text();
-
-        password = ui->passLine->text();
+    password = ui->passLine->text();
         qDebug() << "number: " + number;
         qDebug() << "password: " + password;
 
-    userForm = new UserForm();
-     this->close();
-    userForm->show();
+qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(1);
 
 }
 
 void InitWindow::on_addUser_clicked()
 {
-    addUser = new AddUserForm();
-    addUser->show();
+   qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(8);
+}
+
+void InitWindow::on_exitButton_clicked()
+{
     this->close();
 }

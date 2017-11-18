@@ -15,18 +15,16 @@ UserForm::~UserForm()
 
 void UserForm::on_card1_clicked()
 {
-    menuForm = new MenuForm();
-    QString card1 = ui->card1->text();
-    menuForm->setCardLabelName(card1);
-
-    menuForm->show();
-    this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(2);//go to the menu form
 }
 
 void UserForm::on_addCard_clicked()
 {
-    newCardForm = new AddCardForm();
-    newCardForm->show();
-    this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(7); //go to add cart form
 
+}
+
+void UserForm::on_goBack_clicked()
+{
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(0); //go to init window
 }

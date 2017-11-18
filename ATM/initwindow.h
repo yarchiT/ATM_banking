@@ -5,6 +5,7 @@
 #include "userform.h"
 #include "adduserform.h"
 #include <QDebug>
+#include <QStackedWidget>
 
 namespace Ui {
 class InitWindow;
@@ -22,6 +23,8 @@ private slots:
     void on_submit_clicked();
 
     void on_addUser_clicked();
+
+    void on_exitButton_clicked();
 
 private:
     Ui::InitWindow *ui;

@@ -15,5 +15,5 @@ WithdrawalForm::~WithdrawalForm()
 
 void WithdrawalForm::on_goBack_clicked()
 {
-    this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(2);//go to the menu form form
 }

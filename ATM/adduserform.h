@@ -2,6 +2,7 @@
 #define ADDUSERFORM_H
 
 #include <QWidget>
+#include <QStackedWidget>
 
 namespace Ui {
 class AddUserForm;
@@ -14,6 +15,11 @@ class AddUserForm : public QWidget
 public:
     explicit AddUserForm(QWidget *parent = 0);
     ~AddUserForm();
+
+private slots:
+    void on_goBack_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::AddUserForm *ui;

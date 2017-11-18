@@ -12,3 +12,8 @@ BalanceForm::~BalanceForm()
 {
     delete ui;
 }
+
+void BalanceForm::on_goBack_clicked()
+{
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(2); //go to the menu form
+}

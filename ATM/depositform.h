@@ -2,6 +2,7 @@
 #define DEPOSITFORM_H
 
 #include <QWidget>
+#include <QStackedWidget>
 
 namespace Ui {
 class DepositForm;
@@ -17,6 +18,8 @@ public:
 
 private slots:
     void on_proceed_clicked();
+
+    void on_goBack_clicked();
 
 private:
     Ui::DepositForm *ui;

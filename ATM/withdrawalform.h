@@ -3,6 +3,7 @@
 
 #include <QWidget>
 //#include "menuform.h"
+#include <QStackedWidget>
 
 namespace Ui {
 class WithdrawalForm;

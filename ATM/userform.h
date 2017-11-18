@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "menuform.h"
 #include "addcardform.h"
+#include "QStackedWidget"
 
 namespace Ui {
 class UserForm;
@@ -21,6 +22,8 @@ private slots:
     void on_card1_clicked();
 
     void on_addCard_clicked();
+
+    void on_goBack_clicked();
 
 private:
     Ui::UserForm *ui;

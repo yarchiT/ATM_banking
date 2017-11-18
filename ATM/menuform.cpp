@@ -21,35 +21,28 @@ void MenuForm::setCardLabelName(QString str)
 
 void MenuForm::on_deposit_clicked()
 {
-    depositForm = new DepositForm();
-    depositForm->show();
-    this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(3);
 }
 
 
 void MenuForm::on_withdrawal_clicked()
 {
-    withdrawalForm = new WithdrawalForm();
-    withdrawalForm->show();
-    this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(4);
 }
 
 void MenuForm::on_transferToCard_clicked()
 {
-    transferForm = new TransferForm();
-    transferForm->show();
-    this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(5);
 
 }
 
 void MenuForm::on_showBalance_clicked()
 {
-    balanceForm = new BalanceForm();
-    balanceForm->show();
-    this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(6);
 }
 
 void MenuForm::on_exit_clicked()
 {
-this->close();
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(1); // go to the user form
+
 }

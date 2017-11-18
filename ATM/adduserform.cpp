@@ -12,3 +12,9 @@ AddUserForm::~AddUserForm()
 {
     delete ui;
 }
+
+void AddUserForm::on_goBack_clicked()
+{
+    qobject_cast<QStackedWidget *>(parentWidget())->setCurrentIndex(0); //go to init window
+}
+
