@@ -30,10 +30,10 @@ SOURCES += \
     menuform.cpp \
     depositform.cpp \
     withdrawalform.cpp \
-    transferform.cpp \
     balanceform.cpp \
     adduserform.cpp \
-    addcardform.cpp
+    addcardform.cpp \
+    transferform.cpp
 
 HEADERS += \
         initwindow.h \
@@ -41,10 +41,10 @@ HEADERS += \
     menuform.h \ #\
     depositform.h \
     withdrawalform.h \
-    transferform.h \
     balanceform.h \
     adduserform.h \
-    addcardform.h
+    addcardform.h \
+    transferform.h
    # ../staticBankLib/staticbanklib.h
 
 FORMS += \
@@ -53,10 +53,10 @@ FORMS += \
     menuform.ui \
     depositform.ui \
     withdrawalform.ui \
-    transferform.ui \
     balanceform.ui \
     adduserform.ui \
-    addcardform.ui
+    addcardform.ui \
+    transferform.ui
 
 #INCLUDEPATH += "../staticBankLib"
 #LIBS += "../build-staticBankLib-Desktop-Debug/libstaticBankLib.a"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TransferForm</class>
- <widget class="QWidget" name="TransferForm">
+ <class>transferForm</class>
+ <widget class="QWidget" name="transferForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>40</y>
+     <y>50</y>
      <width>381</width>
      <height>191</height>
     </rect>
@@ -108,7 +108,7 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>20</y>
+     <y>30</y>
      <width>281</width>
      <height>16</height>
     </rect>

@@ -3,7 +3,7 @@
 
 TransferForm::TransferForm(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::TransferForm)
+    ui(new Ui::transferForm)
 {
     ui->setupUi(this);
 }

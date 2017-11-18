@@ -12,12 +12,12 @@ MenuForm::~MenuForm()
 {
     delete ui;
 }
-
 //set cardLabel
 void MenuForm::setCardLabelName(QString str)
 {
     ui->cardLabel->setText(str + " card");
 }
+
 
 void MenuForm::on_deposit_clicked()
 {

@@ -4,7 +4,7 @@
 #include <QWidget>
 
 namespace Ui {
-class TransferForm;
+class transferForm;
 }
 
 class TransferForm : public QWidget
@@ -16,7 +16,7 @@ public:
     ~TransferForm();
 
 private:
-    Ui::TransferForm *ui;
+    Ui::transferForm *ui;
 };
 
 #endif // TRANSFERFORM_H

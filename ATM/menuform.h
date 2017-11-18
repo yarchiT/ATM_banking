@@ -5,8 +5,8 @@
 
 #include "depositform.h"
 #include "withdrawalform.h"
-#include "transferform.h"
 #include "balanceform.h"
+#include "transferform.h"
 
 namespace Ui {
 class MenuForm;
@@ -36,8 +36,8 @@ private:
     Ui::MenuForm *ui;
     DepositForm *depositForm;
     WithdrawalForm *withdrawalForm;
-    TransferForm *transferForm;
     BalanceForm *balanceForm;
+    TransferForm *transferForm;
 
 };
 
