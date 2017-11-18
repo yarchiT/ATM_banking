@@ -27,18 +27,21 @@ SOURCES += \
         main.cpp \
         initwindow.cpp \
     userform.cpp \
-    menuform.cpp
+    menuform.cpp \
+    transferform.cpp
 
 HEADERS += \
         initwindow.h \
     userform.h \
     menuform.h \
-    ../staticBankLib/staticbanklib.h
+    ../staticBankLib/staticbanklib.h \
+    transferform.h
 
 FORMS += \
         initwindow.ui \
     userform.ui \
-    menuform.ui
+    menuform.ui \
+    transferform.ui
 
 INCLUDEPATH += "../staticBankLib"
 LIBS += "../build-staticBankLib-Desktop-Debug/libstaticBankLib.a"

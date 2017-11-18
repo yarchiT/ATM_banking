@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "userform.h"
+#include <QDebug>
 
 namespace Ui {
 class InitWindow;
@@ -22,6 +23,8 @@ private slots:
 private:
     Ui::InitWindow *ui;
     UserForm *userForm;
+    QString number;
+    QString password;
 };
 
 #endif // INITWINDOW_H

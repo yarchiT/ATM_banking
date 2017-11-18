@@ -39,12 +39,15 @@ public:
         card1 = new QPushButton(UserForm);
         card1->setObjectName(QStringLiteral("card1"));
         card1->setGeometry(QRect(20, 80, 113, 32));
+        card1->setCursor(QCursor(Qt::PointingHandCursor));
         addCard = new QPushButton(UserForm);
         addCard->setObjectName(QStringLiteral("addCard"));
         addCard->setGeometry(QRect(260, 60, 113, 32));
+        addCard->setCursor(QCursor(Qt::PointingHandCursor));
         removeCard = new QPushButton(UserForm);
         removeCard->setObjectName(QStringLiteral("removeCard"));
         removeCard->setGeometry(QRect(260, 100, 113, 32));
+        removeCard->setCursor(QCursor(Qt::PointingHandCursor));
 
         retranslateUi(UserForm);
 
@@ -55,7 +58,7 @@ public:
     {
         UserForm->setWindowTitle(QApplication::translate("UserForm", "Form", 0));
         label->setText(QApplication::translate("UserForm", "user name", 0));
-        card1->setText(QApplication::translate("UserForm", "card1", 0));
+        card1->setText(QApplication::translate("UserForm", "Universal", 0));
         addCard->setText(QApplication::translate("UserForm", "add card", 0));
         removeCard->setText(QApplication::translate("UserForm", "remove card", 0));
     } // retranslateUi

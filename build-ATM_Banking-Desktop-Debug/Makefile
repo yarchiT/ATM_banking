@@ -51,16 +51,20 @@ OBJECTS_DIR   = ./
 SOURCES       = ../ATM/main.cpp \
 		../ATM/initwindow.cpp \
 		../ATM/userform.cpp \
-		../ATM/menuform.cpp moc_initwindow.cpp \
+		../ATM/menuform.cpp \
+		../ATM/transferform.cpp moc_initwindow.cpp \
 		moc_userform.cpp \
-		moc_menuform.cpp
+		moc_menuform.cpp \
+		moc_transferform.cpp
 OBJECTS       = main.o \
 		initwindow.o \
 		userform.o \
 		menuform.o \
+		transferform.o \
 		moc_initwindow.o \
 		moc_userform.o \
-		moc_menuform.o
+		moc_menuform.o \
+		moc_transferform.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -120,10 +124,12 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../ATM/ATM_Banking.pro ../ATM/initwindow.h \
 		../ATM/userform.h \
 		../ATM/menuform.h \
-		../staticBankLib/staticbanklib.h ../ATM/main.cpp \
+		../staticBankLib/staticbanklib.h \
+		../ATM/transferform.h ../ATM/main.cpp \
 		../ATM/initwindow.cpp \
 		../ATM/userform.cpp \
-		../ATM/menuform.cpp
+		../ATM/menuform.cpp \
+		../ATM/transferform.cpp
 QMAKE_TARGET  = ATM_Banking
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = ATM_Banking
@@ -151,7 +157,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_initwindow.h ui_userform.h ui_menuform.h $(OBJECTS)  
+$(TARGET): ui_initwindow.h ui_userform.h ui_menuform.h ui_transferform.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../ATM/ATM_Banking.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -289,9 +295,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../ATM/initwindow.h ../ATM/userform.h ../ATM/menuform.h ../staticBankLib/staticbanklib.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ATM/main.cpp ../ATM/initwindow.cpp ../ATM/userform.cpp ../ATM/menuform.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../ATM/initwindow.ui ../ATM/userform.ui ../ATM/menuform.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../ATM/initwindow.h ../ATM/userform.h ../ATM/menuform.h ../staticBankLib/staticbanklib.h ../ATM/transferform.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ATM/main.cpp ../ATM/initwindow.cpp ../ATM/userform.cpp ../ATM/menuform.cpp ../ATM/transferform.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../ATM/initwindow.ui ../ATM/userform.ui ../ATM/menuform.ui ../ATM/transferform.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -314,26 +320,32 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_initwindow.cpp moc_userform.cpp moc_menuform.cpp
+compiler_moc_header_make_all: moc_initwindow.cpp moc_userform.cpp moc_menuform.cpp moc_transferform.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_initwindow.cpp moc_userform.cpp moc_menuform.cpp
+	-$(DEL_FILE) moc_initwindow.cpp moc_userform.cpp moc_menuform.cpp moc_transferform.cpp
 moc_initwindow.cpp: ../ATM/userform.h \
 		../ATM/menuform.h \
+		../ATM/transferform.h \
 		../ATM/initwindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/ATM -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/staticBankLib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ATM/initwindow.h -o moc_initwindow.cpp
 
 moc_userform.cpp: ../ATM/menuform.h \
+		../ATM/transferform.h \
 		../ATM/userform.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/ATM -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/staticBankLib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ATM/userform.h -o moc_userform.cpp
 
-moc_menuform.cpp: ../ATM/menuform.h
+moc_menuform.cpp: ../ATM/transferform.h \
+		../ATM/menuform.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/ATM -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/staticBankLib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ATM/menuform.h -o moc_menuform.cpp
+
+moc_transferform.cpp: ../ATM/transferform.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/ATM -I/home/yaroslav/Documents/Qt_Projects/ATM_Banking/staticBankLib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ATM/transferform.h -o moc_transferform.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_initwindow.h ui_userform.h ui_menuform.h
+compiler_uic_make_all: ui_initwindow.h ui_userform.h ui_menuform.h ui_transferform.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_initwindow.h ui_userform.h ui_menuform.h
+	-$(DEL_FILE) ui_initwindow.h ui_userform.h ui_menuform.h ui_transferform.h
 ui_initwindow.h: ../ATM/initwindow.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../ATM/initwindow.ui -o ui_initwindow.h
 
@@ -342,6 +354,9 @@ ui_userform.h: ../ATM/userform.ui
 
 ui_menuform.h: ../ATM/menuform.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../ATM/menuform.ui -o ui_menuform.h
+
+ui_transferform.h: ../ATM/transferform.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../ATM/transferform.ui -o ui_transferform.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -356,23 +371,31 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: ../ATM/main.cpp ../ATM/initwindow.h \
 		../ATM/userform.h \
 		../ATM/menuform.h \
+		../ATM/transferform.h \
 		../staticBankLib/staticbanklib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../ATM/main.cpp
 
 initwindow.o: ../ATM/initwindow.cpp ../ATM/initwindow.h \
 		../ATM/userform.h \
 		../ATM/menuform.h \
+		../ATM/transferform.h \
 		ui_initwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o initwindow.o ../ATM/initwindow.cpp
 
 userform.o: ../ATM/userform.cpp ../ATM/userform.h \
 		../ATM/menuform.h \
+		../ATM/transferform.h \
 		ui_userform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o userform.o ../ATM/userform.cpp
 
 menuform.o: ../ATM/menuform.cpp ../ATM/menuform.h \
+		../ATM/transferform.h \
 		ui_menuform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menuform.o ../ATM/menuform.cpp
+
+transferform.o: ../ATM/transferform.cpp ../ATM/transferform.h \
+		ui_transferform.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o transferform.o ../ATM/transferform.cpp
 
 moc_initwindow.o: moc_initwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_initwindow.o moc_initwindow.cpp
@@ -382,6 +405,9 @@ moc_userform.o: moc_userform.cpp
 
 moc_menuform.o: moc_menuform.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_menuform.o moc_menuform.cpp
+
+moc_transferform.o: moc_transferform.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_transferform.o moc_transferform.cpp
 
 ####### Install
 

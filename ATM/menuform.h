@@ -1,5 +1,6 @@
 #ifndef MENUFORM_H
 #define MENUFORM_H
+#include "transferform.h"
 
 #include <QWidget>
 
@@ -13,6 +14,7 @@ class MenuForm : public QWidget
 
 public:
     explicit MenuForm(QWidget *parent = 0);
+    void setCardLabelName(QString str);
     ~MenuForm();
 
 private slots:
@@ -28,6 +30,7 @@ private slots:
 
 private:
     Ui::MenuForm *ui;
+    TransferForm *transferForm;
 };
 
 #endif // MENUFORM_H

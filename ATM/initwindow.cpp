@@ -13,10 +13,16 @@ InitWindow::~InitWindow()
     delete ui;
 }
 
+
 void InitWindow::on_submit_clicked()
 {
+    number = ui->numberLine->text();
+    password = ui->passLine->text();
+    qDebug() << "number: " + number;
+    qDebug() << "password: " + password;
+
     userForm = new UserForm();
+     this->close();
     userForm->show();
-    this->close();
 
 }
