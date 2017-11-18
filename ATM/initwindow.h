@@ -6,6 +6,7 @@
 #include "adduserform.h"
 #include <QDebug>
 #include <QStackedWidget>
+#include <QLineEdit>
 
 namespace Ui {
 class InitWindow;

@@ -19,7 +19,8 @@ public:
 private slots:
     void on_goBack_clicked();
 
-    void on_pushButton_2_clicked();
+
+    void on_addUser_clicked();
 
 private:
     Ui::AddUserForm *ui;

@@ -4,6 +4,8 @@
 //#include "staticbanklib.h"
 #include <QStackedWidget>
 #include <QVBoxLayout>
+#include <QLineEdit>
+#include <QValidator>
 int main(int argc, char *argv[])
 {
     //StaticBankLib bLib;
@@ -34,11 +36,11 @@ int main(int argc, char *argv[])
     stackedWidget->addWidget(addCartForm);
     stackedWidget->addWidget(addUserForm);
 
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(stackedWidget);
+
 
     stackedWidget->show();
 
 
     return a.exec();
 }
+
