@@ -15,8 +15,20 @@ InitWindow::~InitWindow()
 
 void InitWindow::on_submit_clicked()
 {
+    number = ui->numberLine->text();
+        password = ui->passLine->text();
+        qDebug() << "number: " + number;
+        qDebug() << "password: " + password;
+
     userForm = new UserForm();
     userForm->show();
     this->close();
 
+}
+
+void InitWindow::on_addUser_clicked()
+{
+    addUser = new AddUserForm();
+    addUser->show();
+    this->close();
 }

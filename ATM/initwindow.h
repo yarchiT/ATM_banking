@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "userform.h"
+#include "adduserform.h"
+#include <QDebug>
 
 namespace Ui {
 class InitWindow;
@@ -19,9 +21,14 @@ public:
 private slots:
     void on_submit_clicked();
 
+    void on_addUser_clicked();
+
 private:
     Ui::InitWindow *ui;
     UserForm *userForm;
+    AddUserForm *addUser;
+    QString number;
+    QString password;
 };
 
 #endif // INITWINDOW_H

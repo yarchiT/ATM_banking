@@ -13,24 +13,40 @@ MenuForm::~MenuForm()
     delete ui;
 }
 
+//set cardLabel
+void MenuForm::setCardLabelName(QString str)
+{
+    ui->cardLabel->setText(str + " card");
+}
+
 void MenuForm::on_deposit_clicked()
 {
-this->close();
+    depositForm = new DepositForm();
+    depositForm->show();
+    this->close();
 }
+
 
 void MenuForm::on_withdrawal_clicked()
 {
-this->close();
+    withdrawalForm = new WithdrawalForm();
+    withdrawalForm->show();
+    this->close();
 }
 
 void MenuForm::on_transferToCard_clicked()
 {
-this->close();
+    transferForm = new TransferForm();
+    transferForm->show();
+    this->close();
+
 }
 
 void MenuForm::on_showBalance_clicked()
 {
-this->close();
+    balanceForm = new BalanceForm();
+    balanceForm->show();
+    this->close();
 }
 
 void MenuForm::on_exit_clicked()

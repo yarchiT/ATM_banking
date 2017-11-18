@@ -27,18 +27,36 @@ SOURCES += \
         main.cpp \
         initwindow.cpp \
     userform.cpp \
-    menuform.cpp
+    menuform.cpp \
+    depositform.cpp \
+    withdrawalform.cpp \
+    transferform.cpp \
+    balanceform.cpp \
+    adduserform.cpp \
+    addcardform.cpp
 
 HEADERS += \
         initwindow.h \
     userform.h \
-    menuform.h \
-    ../staticBankLib/staticbanklib.h
+    menuform.h \ #\
+    depositform.h \
+    withdrawalform.h \
+    transferform.h \
+    balanceform.h \
+    adduserform.h \
+    addcardform.h
+   # ../staticBankLib/staticbanklib.h
 
 FORMS += \
         initwindow.ui \
     userform.ui \
-    menuform.ui
+    menuform.ui \
+    depositform.ui \
+    withdrawalform.ui \
+    transferform.ui \
+    balanceform.ui \
+    adduserform.ui \
+    addcardform.ui
 
-INCLUDEPATH += "../staticBankLib"
-LIBS += "../build-staticBankLib-Desktop-Debug/libstaticBankLib.a"
+#INCLUDEPATH += "../staticBankLib"
+#LIBS += "../build-staticBankLib-Desktop-Debug/libstaticBankLib.a"

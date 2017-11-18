@@ -3,6 +3,11 @@
 
 #include <QWidget>
 
+#include "depositform.h"
+#include "withdrawalform.h"
+#include "transferform.h"
+#include "balanceform.h"
+
 namespace Ui {
 class MenuForm;
 }
@@ -13,6 +18,7 @@ class MenuForm : public QWidget
 
 public:
     explicit MenuForm(QWidget *parent = 0);
+    void setCardLabelName(QString str);
     ~MenuForm();
 
 private slots:
@@ -28,6 +34,11 @@ private slots:
 
 private:
     Ui::MenuForm *ui;
+    DepositForm *depositForm;
+    WithdrawalForm *withdrawalForm;
+    TransferForm *transferForm;
+    BalanceForm *balanceForm;
+
 };
 
 #endif // MENUFORM_H

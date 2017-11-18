@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "menuform.h"
+#include "addcardform.h"
 
 namespace Ui {
 class UserForm;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_card1_clicked();
 
+    void on_addCard_clicked();
+
 private:
     Ui::UserForm *ui;
     MenuForm *menuForm;
+    AddCardForm *newCardForm;
 };
 
 #endif // USERFORM_H

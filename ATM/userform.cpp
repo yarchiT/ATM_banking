@@ -16,6 +16,17 @@ UserForm::~UserForm()
 void UserForm::on_card1_clicked()
 {
     menuForm = new MenuForm();
+    QString card1 = ui->card1->text();
+    menuForm->setCardLabelName(card1);
+
     menuForm->show();
     this->close();
+}
+
+void UserForm::on_addCard_clicked()
+{
+    newCardForm = new AddCardForm();
+    newCardForm->show();
+    this->close();
+
 }
