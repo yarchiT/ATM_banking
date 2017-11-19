@@ -45,7 +45,7 @@ HEADERS += \
     adduserform.h \
     addcardform.h \
     transferform.h
-   # ../staticBankLib/staticbanklib.h
+    ../staticBankLib/staticbanklib.h
 
 FORMS += \
         initwindow.ui \
@@ -58,5 +58,5 @@ FORMS += \
     addcardform.ui \
     transferform.ui
 
-#INCLUDEPATH += "../staticBankLib"
-#LIBS += "../build-staticBankLib-Desktop-Debug/libstaticBankLib.a"
+INCLUDEPATH += "../staticBankLib"
+LIBS += "../build-staticBankLib-Desktop-Debug/libstaticBankLib.a"

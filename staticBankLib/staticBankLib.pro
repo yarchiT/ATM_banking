@@ -10,9 +10,15 @@ TARGET = staticBankLib
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += staticbanklib.cpp
+SOURCES += staticbanklib.cpp \
+    authorization.cpp \
+    userlist.cpp \
+    user.cpp
 
-HEADERS += staticbanklib.h
+HEADERS += staticbanklib.h \
+    authorization.h \
+    userlist.h \
+    user.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

@@ -1,15 +1,15 @@
 #include "initwindow.h"
 #include "menuform.h"
 #include <QApplication>
-//#include "staticbanklib.h"
+#include "staticbanklib.h"
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include <QLineEdit>
 #include <QValidator>
 int main(int argc, char *argv[])
 {
-    //StaticBankLib bLib;
-   // bLib.Test();
+    StaticBankLib bLib;
+    bLib.Test();
     QApplication a(argc, argv);
 
 
